@@ -15,8 +15,8 @@ function increaseRankBy(n){
   for (let i = 0, l = list.length; i < l; i++) {
    let ranks = list[i].ranks
 
-   for (let j = 0, k = ranks.length; j < k; j++) {
-     ranks[j].innerHTML = parseInt(ranks[j].innerHTML) + n
+   for (let i = 0, l = ranks.length; i < l; i++) {
+     expect(parseInt(ranks[i].innerHTML)).toEqual(start - i + 3)
    }
  }
 }
