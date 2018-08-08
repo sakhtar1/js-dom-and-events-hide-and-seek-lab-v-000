@@ -10,13 +10,14 @@ function deepestChild(){
   return document.querySelector('#grand-node div div div div')
 }
 
-function increaseRankBy(n){
-  const list = document.querySelectorAll('.ranked-list')
-  for (let i = 0, l = list.length; i < l; i++) {
-   let ranks = list[i].ranks
+function increaseRankBy(n) {
+  const rankedLists = document.querySelectorAll('.ranked-list')
 
-   for (let i = 0, l = ranks.length; i < l; i++) {
-     expect(parseInt(ranks[i].innerHTML)).toEqual(start - i + 3)
-   }
- }
+  for (let i = 0, l = rankedLists.length; i < l; i++) {
+    let children = rankedLists[i].children
+
+    for (let j = 0, k = children.length; j < k; j++) {
+      children[j].innerHTML = parseInt(children[j].innerHTML) + n
+    }
+  }
 }
